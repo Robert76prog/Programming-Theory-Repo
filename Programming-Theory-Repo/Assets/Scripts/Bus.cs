@@ -10,7 +10,7 @@ public class Bus : Vehicle
         AngularSpeed = 120;
         base.Awake();
     }
-
+    // POLYMORPHISM
     public override void GoTo(Stand target)
     {
         BusStand busStand = target as BusStand;
@@ -19,6 +19,7 @@ public class Bus : Vehicle
             base.GoTo(target);
         }
     }
+    // POLYMORPHISM
     public override void GoTo(Vector3 position)
     {
         //only goto Bus Station
