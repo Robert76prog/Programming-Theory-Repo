@@ -1,6 +1,7 @@
 using UnityEngine;
 
-public class Bus : Vehicle
+//INHERITANCE
+public class Bus : Vehicle 
 {
     protected override void Awake()
     {

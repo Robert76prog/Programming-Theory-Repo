@@ -12,18 +12,18 @@ public class Vehicle : MonoBehaviour
     private Stand m_target;
     private NavMeshAgent m_Agent;
     public bool busy { get; private set; }
-
+    // ENCAPSULATION
     public float Speed
     {  get { return m_speed; } 
        set { if (value > 0.5f && value < 50f) m_speed = value; } 
-    }   
-    
+    }
+    // ENCAPSULATION
     public float Acceleration
     {
         get { return m_acceleration; }
         set { if (value > 1f && value < 500f) m_acceleration = value; }
     }
-
+    // ENCAPSULATION
     public float AngularSpeed
     {
         get { return m_angularSpeed; }
@@ -61,14 +61,14 @@ public class Vehicle : MonoBehaviour
         m_Agent = GetComponent<NavMeshAgent>();
         SetNavmeshData();
     }
-
+    // ABSTRACTION
     protected void SetNavmeshData()
     {
         m_Agent.speed = m_speed;
         m_Agent.acceleration = m_acceleration;
         m_Agent.angularSpeed = m_angularSpeed;
     }
-
+    // ABSTRACTION
     public virtual void GoTo(Vector3 position)
     {
         //we don't have a target anymore if we order to go to a random point.
@@ -77,7 +77,7 @@ public class Vehicle : MonoBehaviour
         m_Agent.isStopped = false;
         busy = true;
     }
-
+    // ABSTRACTION
     public virtual void GoTo(Stand target)
     {
         m_target = target;

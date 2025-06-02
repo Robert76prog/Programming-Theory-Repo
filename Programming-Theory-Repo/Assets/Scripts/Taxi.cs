@@ -1,8 +1,7 @@
 using UnityEngine;
-
+//INHERITANCE
 public class Taxi : Vehicle
 {
-
     protected override void Awake()
     {
         Speed = 10;
@@ -10,8 +9,8 @@ public class Taxi : Vehicle
         AngularSpeed = 300;
         base.Awake();
     }
-
-    public override void GoTo(Stand target)
+    // POLYMORPHISM
+    public override void GoTo(Stand target) 
     {
         //GotoBus or Taxi Stand
         Stand busStand = target as Stand;
@@ -20,7 +19,8 @@ public class Taxi : Vehicle
             base.GoTo(target);
         }
     }
-    public override void GoTo(Vector3 position)
+    // POLYMORPHISM
+    public override void GoTo(Vector3 position) 
     {
         //only goto Bus or Taxi Station
         //base.GoTo(position);
